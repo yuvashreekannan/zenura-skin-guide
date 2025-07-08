@@ -27,7 +27,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 flex items-center justify-center">
               <img 
-                src="/lovable-uploads/da05900c-2f7c-4469-a134-a14f1ef8339a.png" 
+                src="/lovable-uploads/0726a3b6-fe88-4513-97de-c9ed19be7e65.png" 
                 alt="ZENURA Logo"
                 className="w-10 h-10 object-contain"
               />
