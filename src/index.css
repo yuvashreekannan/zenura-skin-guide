@@ -2,41 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ZENURA Medical Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base medical whites and grays */
+    --background: 48 100% 99%;
+    --foreground: 210 12% 16%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 12% 16%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 12% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* ZENURA brand gold and trust blues */
+    --primary: 43 96% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 45 100% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Medical trust blue */
+    --secondary: 207 73% 57%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-soft: 207 73% 97%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral medical grays */
+    --muted: 210 14% 97%;
+    --muted-foreground: 210 12% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 207 73% 57%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Medical alert colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 14% 89%;
+    --input: 210 14% 97%;
+    --ring: 43 96% 56%;
 
-    --radius: 0.5rem;
+    /* Life-stage specific colors */
+    --pregnancy: 330 81% 60%;
+    --pregnancy-soft: 330 81% 98%;
+    --pregnancy-foreground: 330 81% 15%;
+
+    --menstruation: 0 100% 67%;
+    --menstruation-soft: 0 100% 98%;
+    --menstruation-foreground: 0 100% 25%;
+
+    --menopause: 270 50% 65%;
+    --menopause-soft: 270 50% 98%;
+    --menopause-foreground: 270 50% 20%;
+
+    /* Medical gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(43 96% 56% / 0.1), hsl(207 73% 57% / 0.1));
+    --gradient-trust: linear-gradient(180deg, hsl(207 73% 57% / 0.05), transparent);
+    --gradient-pregnancy: linear-gradient(135deg, hsl(330 81% 60% / 0.1), hsl(330 81% 98%));
+    --gradient-menstruation: linear-gradient(135deg, hsl(0 100% 67% / 0.1), hsl(0 100% 98%));
+    --gradient-menopause: linear-gradient(135deg, hsl(270 50% 65% / 0.1), hsl(270 50% 98%));
+
+    /* Medical shadows */
+    --shadow-soft: 0 2px 10px hsl(210 12% 16% / 0.08);
+    --shadow-medium: 0 4px 20px hsl(210 12% 16% / 0.12);
+    --shadow-strong: 0 8px 30px hsl(43 96% 56% / 0.15);
+
+    /* Animations */
+    --transition-medical: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 12px;
 
     --sidebar-background: 0 0% 98%;
 

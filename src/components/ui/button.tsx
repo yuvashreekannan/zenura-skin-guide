@@ -9,20 +9,25 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-soft hover:shadow-medium",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-soft",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        medical: "bg-gradient-trust text-secondary-foreground hover:bg-secondary shadow-soft hover:shadow-medium transition-medical",
+        pregnancy: "bg-pregnancy-soft text-pregnancy-foreground hover:bg-pregnancy/10 border border-pregnancy/20",
+        menstruation: "bg-menstruation-soft text-menstruation-foreground hover:bg-menstruation/10 border border-menstruation/20",
+        menopause: "bg-menopause-soft text-menopause-foreground hover:bg-menopause/10 border border-menopause/20",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-lg px-10 text-base",
         icon: "h-10 w-10",
       },
     },

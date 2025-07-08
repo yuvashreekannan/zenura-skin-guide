@@ -26,11 +26,13 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					soft: 'hsl(var(--primary-soft))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					soft: 'hsl(var(--secondary-soft))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -52,6 +54,21 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				pregnancy: {
+					DEFAULT: 'hsl(var(--pregnancy))',
+					soft: 'hsl(var(--pregnancy-soft))',
+					foreground: 'hsl(var(--pregnancy-foreground))'
+				},
+				menstruation: {
+					DEFAULT: 'hsl(var(--menstruation))',
+					soft: 'hsl(var(--menstruation-soft))',
+					foreground: 'hsl(var(--menstruation-foreground))'
+				},
+				menopause: {
+					DEFAULT: 'hsl(var(--menopause))',
+					soft: 'hsl(var(--menopause-soft))',
+					foreground: 'hsl(var(--menopause-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +84,21 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-trust': 'var(--gradient-trust)',
+				'gradient-pregnancy': 'var(--gradient-pregnancy)',
+				'gradient-menstruation': 'var(--gradient-menstruation)',
+				'gradient-menopause': 'var(--gradient-menopause)'
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'medium': 'var(--shadow-medium)',
+				'strong': 'var(--shadow-strong)'
+			},
+			transitionTimingFunction: {
+				'medical': 'var(--transition-medical)'
 			},
 			keyframes: {
 				'accordion-down': {
