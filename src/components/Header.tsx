@@ -1,7 +1,8 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Stethoscope } from "lucide-react";
+import { Menu, X, MessageCircle, UserCheck } from "lucide-react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,8 +25,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Stethoscope className="w-6 h-6 text-primary-foreground" />
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/257d339d-cf1d-4827-85f7-583c49dfe4ac.png" 
+                alt="ZENURA Logo"
+                className="w-10 h-10 object-contain"
+              />
             </div>
             <span className="text-2xl font-bold text-primary">ZENURA</span>
           </Link>
@@ -45,9 +50,16 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <Button variant="medical" size="sm">
-              Ask AI Assistant
-            </Button>
+            <div className="flex items-center space-x-3">
+              <Button variant="outline" size="sm">
+                <UserCheck className="w-4 h-4 mr-2" />
+                Connect Dermatologist
+              </Button>
+              <Button variant="medical" size="sm">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                Ask AI Assistant
+              </Button>
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -80,8 +92,13 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <div className="pt-2">
+            <div className="pt-2 space-y-2">
+              <Button variant="outline" size="sm" className="w-full">
+                <UserCheck className="w-4 h-4 mr-2" />
+                Connect Dermatologist
+              </Button>
               <Button variant="medical" size="sm" className="w-full">
+                <MessageCircle className="w-4 h-4 mr-2" />
                 Ask AI Assistant
               </Button>
             </div>
