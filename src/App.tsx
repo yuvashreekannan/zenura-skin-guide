@@ -4,6 +4,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Diagnosis from "./pages/Diagnosis";
@@ -18,21 +20,47 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Index />} />
-          <Route path="/diagnosis" element={<Diagnosis />} />
-          <Route path="/pregnancy" element={<Pregnancy />} />
-          <Route path="/menstruation" element={<Menstruation />} />
-          <Route path="/menopause" element={<Menopause />} />
-          <Route path="/faq" element={<FAQ />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/home" element={
+              <ProtectedRoute>
+                <Index />
+              </ProtectedRoute>
+            } />
+            <Route path="/diagnosis" element={
+              <ProtectedRoute>
+                <Diagnosis />
+              </ProtectedRoute>
+            } />
+            <Route path="/pregnancy" element={
+              <ProtectedRoute>
+                <Pregnancy />
+              </ProtectedRoute>
+            } />
+            <Route path="/menstruation" element={
+              <ProtectedRoute>
+                <Menstruation />
+              </ProtectedRoute>
+            } />
+            <Route path="/menopause" element={
+              <ProtectedRoute>
+                <Menopause />
+              </ProtectedRoute>
+            } />
+            <Route path="/faq" element={
+              <ProtectedRoute>
+                <FAQ />
+              </ProtectedRoute>
+            } />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
