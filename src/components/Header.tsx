@@ -29,7 +29,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/0726a3b6-fe88-4513-97de-c9ed19be7e65.png" 
                 alt="ZENURA Logo"
-                className="w-10 h-10 object-contain"
+                className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
             <span className="text-2xl font-bold text-primary">ZENURA</span>
@@ -41,21 +41,21 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-medical ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(item.path)
-                    ? "bg-primary-soft text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "bg-primary text-primary-foreground shadow-medium"
+                    : "text-foreground hover:text-primary hover:bg-primary/10 border border-transparent hover:border-primary/20"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
             <div className="flex items-center space-x-3">
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="border-2 hover:border-primary hover:bg-primary/10">
                 <UserCheck className="w-4 h-4 mr-2" />
                 Connect Dermatologist
               </Button>
-              <Button variant="medical" size="sm">
+              <Button variant="medical" size="sm" className="shadow-medium hover:shadow-strong">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Ask AI Assistant
               </Button>
@@ -64,40 +64,40 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-3 rounded-lg hover:bg-muted border-2 border-transparent hover:border-primary/20 transition-all"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-foreground" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 text-foreground" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 space-y-2">
+          <nav className="md:hidden mt-4 pb-4 space-y-2 border-t pt-4">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block px-3 py-2 rounded-md text-sm font-medium transition-medical ${
+                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                   isActive(item.path)
-                    ? "bg-primary-soft text-primary"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "bg-primary text-primary-foreground shadow-medium"
+                    : "text-foreground hover:text-primary hover:bg-primary/10 border border-transparent hover:border-primary/20"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="pt-2 space-y-2">
-              <Button variant="outline" size="sm" className="w-full">
+            <div className="pt-2 space-y-3">
+              <Button variant="outline" size="sm" className="w-full border-2 hover:border-primary hover:bg-primary/10">
                 <UserCheck className="w-4 h-4 mr-2" />
                 Connect Dermatologist
               </Button>
-              <Button variant="medical" size="sm" className="w-full">
+              <Button variant="medical" size="sm" className="w-full shadow-medium hover:shadow-strong">
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Ask AI Assistant
               </Button>

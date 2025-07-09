@@ -29,25 +29,25 @@ const Index = () => {
                 Specialized care for pregnancy, menstruation, and menopause.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="xl" asChild>
-                  <Link to="/diagnosis">
+                <Button size="xl" asChild className="shadow-strong hover:shadow-medium border-2 border-primary/20">
+                  <Link to="/login">
                     <Camera className="w-5 h-5" />
                     Start Diagnosis
                   </Link>
                 </Button>
-                <Button variant="medical" size="xl">
+                <Button variant="medical" size="xl" className="shadow-strong hover:shadow-medium border-2 border-secondary/20">
                   <MessageCircle className="w-5 h-5" />
                   Ask AI Assistant
                 </Button>
               </div>
               <div className="flex items-center space-x-6 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-2">
-                  <Shield className="w-4 h-4 text-secondary" />
-                  <span>HIPAA Compliant</span>
+                  <Shield className="w-5 h-5 text-secondary" />
+                  <span className="font-medium">HIPAA Compliant</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Sparkles className="w-4 h-4 text-primary" />
-                  <span>AI Powered</span>
+                  <Sparkles className="w-5 h-5 text-primary" />
+                  <span className="font-medium">AI Powered</span>
                 </div>
               </div>
             </div>
@@ -74,7 +74,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Pregnancy Panel */}
-            <Card className="group hover:shadow-strong transition-medical overflow-hidden">
+            <Card className="group hover:shadow-strong transition-medical overflow-hidden border-2 hover:border-pregnancy/30">
               <div className="relative h-48 bg-gradient-pregnancy">
                 <img 
                   src={pregnancyPanel} 
@@ -85,16 +85,16 @@ const Index = () => {
               </div>
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-2">
-                  <Baby className="w-6 h-6 text-pregnancy" />
-                  <CardTitle className="text-pregnancy">Pregnancy Care</CardTitle>
+                  <Baby className="w-7 h-7 text-pregnancy" />
+                  <CardTitle className="text-pregnancy text-xl">Pregnancy Care</CardTitle>
                 </div>
-                <CardDescription>
+                <CardDescription className="text-base">
                   Specialized diagnosis for pregnancy-related skin changes like melasma, stretch marks, and PUPPP.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="pregnancy" className="w-full" asChild>
-                  <Link to="/pregnancy">
+                <Button variant="pregnancy" className="w-full h-12 text-base font-semibold shadow-medium hover:shadow-strong" asChild>
+                  <Link to="/login">
                     Pregnancy Diagnosis
                   </Link>
                 </Button>
@@ -102,7 +102,7 @@ const Index = () => {
             </Card>
 
             {/* Menstruation Panel */}
-            <Card className="group hover:shadow-strong transition-medical overflow-hidden">
+            <Card className="group hover:shadow-strong transition-medical overflow-hidden border-2 hover:border-menstruation/30">
               <div className="relative h-48 bg-gradient-menstruation">
                 <img 
                   src={menstruationPanel} 
@@ -113,16 +113,16 @@ const Index = () => {
               </div>
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-2">
-                  <Heart className="w-6 h-6 text-menstruation" />
-                  <CardTitle className="text-menstruation">Menstrual Health</CardTitle>
+                  <Heart className="w-7 h-7 text-menstruation" />
+                  <CardTitle className="text-menstruation text-xl">Menstrual Health</CardTitle>
                 </div>
-                <CardDescription>
+                <CardDescription className="text-base">
                   Understand hormonal skin changes during your cycle with targeted care recommendations.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="menstruation" className="w-full" asChild>
-                  <Link to="/menstruation">
+                <Button variant="menstruation" className="w-full h-12 text-base font-semibold shadow-medium hover:shadow-strong" asChild>
+                  <Link to="/login">
                     Menstrual Diagnosis
                   </Link>
                 </Button>
@@ -130,7 +130,7 @@ const Index = () => {
             </Card>
 
             {/* Menopause Panel */}
-            <Card className="group hover:shadow-strong transition-medical overflow-hidden">
+            <Card className="group hover:shadow-strong transition-medical overflow-hidden border-2 hover:border-menopause/30">
               <div className="relative h-48 bg-gradient-menopause">
                 <img 
                   src={menopausePanel} 
@@ -141,16 +141,16 @@ const Index = () => {
               </div>
               <CardHeader>
                 <div className="flex items-center space-x-2 mb-2">
-                  <Flower2 className="w-6 h-6 text-menopause" />
-                  <CardTitle className="text-menopause">Menopause Support</CardTitle>
+                  <Flower2 className="w-7 h-7 text-menopause" />
+                  <CardTitle className="text-menopause text-xl">Menopause Support</CardTitle>
                 </div>
-                <CardDescription>
+                <CardDescription className="text-base">
                   Age-appropriate care for mature skin, addressing dryness, wrinkles, and age spots.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="menopause" className="w-full" asChild>
-                  <Link to="/menopause">
+                <Button variant="menopause" className="w-full h-12 text-base font-semibold shadow-medium hover:shadow-strong" asChild>
+                  <Link to="/login">
                     Menopause Diagnosis
                   </Link>
                 </Button>
@@ -170,8 +170,8 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto">
-                <Upload className="w-8 h-8 text-primary-foreground" />
+              <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto shadow-medium">
+                <Upload className="w-10 h-10 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">Upload Photo</h3>
               <p className="text-muted-foreground">
@@ -180,8 +180,8 @@ const Index = () => {
             </div>
             
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mx-auto">
-                <Sparkles className="w-8 h-8 text-secondary-foreground" />
+              <div className="w-20 h-20 bg-secondary rounded-2xl flex items-center justify-center mx-auto shadow-medium">
+                <Sparkles className="w-10 h-10 text-secondary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">AI Analysis</h3>
               <p className="text-muted-foreground">
@@ -190,8 +190,8 @@ const Index = () => {
             </div>
             
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto">
-                <Heart className="w-8 h-8 text-primary-foreground" />
+              <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto shadow-medium">
+                <Heart className="w-10 h-10 text-primary-foreground" />
               </div>
               <h3 className="text-xl font-semibold">Get Results</h3>
               <p className="text-muted-foreground">
@@ -214,37 +214,37 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center hover:shadow-medium transition-medical">
+            <Card className="text-center hover:shadow-medium transition-medical border-2 hover:border-secondary/30">
               <CardHeader>
-                <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-secondary-foreground" />
+                <div className="w-20 h-20 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-medium">
+                  <Users className="w-10 h-10 text-secondary-foreground" />
                 </div>
-                <CardTitle>Community Outreach</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-xl">Community Outreach</CardTitle>
+                <CardDescription className="text-base">
                   Partnering with local NGOs to conduct skin health awareness workshops in rural and underserved communities.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="text-center hover:shadow-medium transition-medical">
+            <Card className="text-center hover:shadow-medium transition-medical border-2 hover:border-primary/30">
               <CardHeader>
-                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <GraduationCap className="w-8 h-8 text-primary-foreground" />
+                <div className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-medium">
+                  <GraduationCap className="w-10 h-10 text-primary-foreground" />
                 </div>
-                <CardTitle>Educational Programs</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-xl">Educational Programs</CardTitle>
+                <CardDescription className="text-base">
                   Training community health workers to identify common skin conditions and provide basic guidance using our resources.
                 </CardDescription>
               </CardHeader>
             </Card>
 
-            <Card className="text-center hover:shadow-medium transition-medical">
+            <Card className="text-center hover:shadow-medium transition-medical border-2 hover:border-pregnancy/30">
               <CardHeader>
-                <div className="w-16 h-16 bg-pregnancy rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Globe className="w-8 h-8 text-pregnancy-foreground" />
+                <div className="w-20 h-20 bg-pregnancy rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-medium">
+                  <Globe className="w-10 h-10 text-pregnancy-foreground" />
                 </div>
-                <CardTitle>Global Impact</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-xl">Global Impact</CardTitle>
+                <CardDescription className="text-base">
                   Making skin health knowledge accessible across language and technology barriers through simplified guides and visual aids.
                 </CardDescription>
               </CardHeader>
@@ -252,7 +252,7 @@ const Index = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="bg-secondary-soft p-8 rounded-2xl max-w-4xl mx-auto">
+            <div className="bg-secondary-soft p-8 rounded-2xl max-w-4xl mx-auto border-2 border-secondary/20">
               <h3 className="text-2xl font-semibold mb-4 text-secondary">Our Mission: Healthcare for All</h3>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 We believe that everyone deserves access to quality skin health information, regardless of their 
@@ -261,7 +261,7 @@ const Index = () => {
                 to spread awareness about skin conditions, their prevention, and safe home remedies.
               </p>
               <div className="mt-6">
-                <Button variant="secondary" size="lg">
+                <Button variant="secondary" size="lg" className="shadow-medium hover:shadow-strong">
                   Learn About Our NGO Partnerships
                 </Button>
               </div>
