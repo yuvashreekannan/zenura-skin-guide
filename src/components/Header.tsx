@@ -9,7 +9,7 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { path: "/", label: "Home" },
+    { path: "/home", label: "Home" },
     { path: "/diagnosis", label: "AI Diagnosis" },
     { path: "/pregnancy", label: "Pregnancy" },
     { path: "/menstruation", label: "Menstruation" },
@@ -24,7 +24,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/home" className="flex items-center space-x-3">
             <div className="w-12 h-12 flex items-center justify-center">
               <img 
                 src="/lovable-uploads/0726a3b6-fe88-4513-97de-c9ed19be7e65.png" 
