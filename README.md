@@ -1,73 +1,174 @@
-# Welcome to your Lovable project
+# ZENURA – Smart Diagnosis of Skin Disease with Deep Learning
 
-## Project info
+## About the Project
+ZENURA is an AI-powered healthcare platform designed to support skin disease identification using deep learning and Vision Transformers (ViT). Users can upload skin images to receive AI-generated predictions, disease information, and personalized skincare recommendations.
 
-**URL**: https://lovable.dev/projects/6b3314eb-cfbc-46ad-9912-278489dce092
+The platform also provides specialized care guidance for pregnancy, menstruation, and menopause, promoting accessible and inclusive skin healthcare.
 
-## How can I edit this code?
+## Key Features
+- **AI-Based Skin Disease Classification:** Analyzes uploaded skin images using a Vision Transformer model.
+- **Personalized Recommendations:** Provides disease information and skincare guidance based on predictions.
+- **AI Chatbot:** Offers skin health awareness and basic skincare assistance.
+- **Specialized Care:** Includes pregnancy, menstruation, and menopause care sections.
+- **User Authentication:** Supports secure login and access to platform features.
+- **Admin Panel:** Supports administrative management of the platform.
 
-There are several ways of editing your application.
+## Technology Stack
 
-**Use Lovable**
+| Component | Technology |
+|---|---|
+| Frontend | React.js, Tailwind CSS |
+| AI / Deep Learning | Python, PyTorch |
+| Model Architecture | Vision Transformer (ViT) |
+| Image Processing | Python imaging libraries |
+| Version Control | Git, GitHub |
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6b3314eb-cfbc-46ad-9912-278489dce092) and start prompting.
+*Add your actual backend, database, and deployment technologies if applicable.*
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+```text
+ZENURA/
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── .env.example
+├── model/
+│   ├── train.py
+│   ├── predict.py
+│   └── requirements.txt
+├── docs/
+│   └── technical-design.md
+├── .gitignore
+└── README.md
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+*This is a suggested structure. Update it to match your actual repository.*
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Prerequisites
+- Node.js and npm
+- Python 3.10 or a version compatible with your installed PyTorch release
+- Git
+- A trained ViT model checkpoint and the required dataset, if running inference or training locally
 
-Follow these steps:
+## Installation and Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 1. Clone the Repository
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd ZENURA
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 2. Set Up the Frontend
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+cd frontend
+npm install
+```
+
+Create a `.env` file inside the frontend directory and add the environment variables required by your application.
+
+Example:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+Replace the URL with your actual backend endpoint. If your frontend does not use a backend API, this variable may not be needed.
+
+### 3. Set Up the AI Model Environment
+
+Open a new terminal from the project root.
+
+```bash
+cd model
+python -m venv venv
+```
+
+Activate the environment.
+
+**Windows:**
+```bash
+venv\Scripts\activate
+```
+
+**Linux / macOS:**
+```bash
+source venv/bin/activate
+```
+
+Install the dependencies listed in `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+Ensure that the required PyTorch version and any image-processing libraries are installed.
+
+### 4. Configure Environment Variables
+
+Store configuration values in environment files instead of hardcoding them into the source code.
+
+Example variables, depending on the actual implementation:
+
+```env
+VITE_API_BASE_URL=http://localhost:8000
+MODEL_PATH=./checkpoints/vit_model.pth
+```
+
+- `VITE_API_BASE_URL`: URL of the backend API used by the frontend.
+- `MODEL_PATH`: Location of the trained model checkpoint, if your inference code reads it from an environment variable.
+
+These are examples, not confirmed settings for the current implementation. Add authentication keys, database URLs, or AI service keys only if your project actually uses those services.
+
+**Security:** Never commit real passwords, API keys, or private credentials to GitHub. Add `.env` and other secret files to `.gitignore`. Provide an `.env.example` containing placeholder values only.
+
+### 5. Run the Application
+
+Start the frontend:
+
+```bash
+cd frontend
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open the local URL printed by Vite in the terminal.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+If the project includes a separate backend or model inference API, start it using its actual entry point and configuration. The frontend API URL must point to the running service.
 
-**Use GitHub Codespaces**
+## How It Works
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. The user uploads a skin image.
+2. The image is prepared for model inference.
+3. The trained Vision Transformer analyzes image features and predicts a supported skin disease class.
+4. The platform displays the prediction and relevant skin health information.
+5. The user can explore skincare guidance, chatbot assistance, and specialized care resources.
 
-## What technologies are used for this project?
+## Expected Outcomes
+- Accessible preliminary skin image assessment.
+- Improved awareness of common skin conditions.
+- Personalized skin health guidance.
+- More inclusive healthcare information for different stages of life.
 
-This project is built with:
+## Intended Impact
+ZENURA aims to reduce barriers to preliminary skin health assessment, promote early awareness, and encourage informed healthcare decisions, particularly in underserved communities.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Future Enhancements
+- Support for more skin conditions and diverse skin tones.
+- Multilingual chatbot assistance.
+- Dermatologist feedback and validation.
+- Offline or mobile access.
+- Integration with healthcare systems where appropriate.
 
-## How can I deploy this project?
+## Disclaimer
+ZENURA is an AI-based support and awareness tool. Its predictions are not a definitive medical diagnosis and must not replace consultation with a qualified dermatologist. Users should seek professional medical advice for concerning, persistent, or changing skin conditions.
 
-Simply open [Lovable](https://lovable.dev/projects/6b3314eb-cfbc-46ad-9912-278489dce092) and click on Share -> Publish.
+## Contributors
+- Yuvashree K
+- J. Akshya
+- K. V. Diksha
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+Add the license applicable to this project. If no license has been selected, clarify the intended usage and permissions before adding one.
